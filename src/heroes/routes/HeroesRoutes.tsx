@@ -1,17 +1,17 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 
-import NavBar from '../components/NavBar';
-import { DC, Hero, Marvel, Search } from '../pages';
+import NavBar from "../components/NavBar";
+import { DCPage, HeroPage, MarvelPage, SearchPage } from "../pages";
 
 const HeroesRoutes = () => {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="marvel" element={<Marvel />} />
-        <Route path="dc" element={<DC />} />
-        <Route path="search" element={<Search />} />
-        <Route path="hero" element={<Hero />} />
+        <Route path="marvel" element={<MarvelPage />} />
+        <Route path="dc" element={<DCPage />} />
+        <Route path="search" element={<SearchPage />} />
+        <Route path="hero/:heroID" element={<HeroPage />} />
       </Routes>
     </>
   );

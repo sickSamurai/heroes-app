@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 
 import { HeroGrid } from "../components/HeroGrid";
 
-export const DC = () => {
+export const DCPage = () => {
   return (
     <>
       <Box sx={{ p: 4 }}>

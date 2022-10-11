@@ -10,3 +10,9 @@ export const getHeroesByPublisher = (publisher: string) => {
     return heroes.filter((hero) => hero.publisher === publisher);
   }
 };
+
+export const getHeroByID = (id: string) => {
+  const heroes = heroesData as Hero[];
+  const foundHero = heroes.find((hero) => hero.id === id);
+  return !foundHero ? null : foundHero;
+};

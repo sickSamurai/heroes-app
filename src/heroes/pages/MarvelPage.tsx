@@ -3,7 +3,7 @@ import React from "react";
 
 import { HeroGrid } from "../components/HeroGrid";
 
-export const Marvel = () => {
+export const MarvelPage = () => {
   return (
     <>
       <Box sx={{ p: 4 }}>

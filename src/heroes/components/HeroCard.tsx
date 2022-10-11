@@ -17,14 +17,14 @@ type Props = {
 export const HeroCard = ({ hero }: Props) => {
   return (
     <Card>
-      <CardHeader title={hero.superhero} subheader={hero.alter_ego} />
+      <CardHeader title={hero.superhero} />
       <CardMedia
         component="img"
         image={`/static/${hero.id}.jpg`}
         alt={hero.superhero}
       />
       <CardActions>
-        <Button size="small" component={Link} to={`hero/${hero.id}`}>
+        <Button size="small" component={Link} to={`/hero/${hero.id}`}>
           Ver Más
         </Button>
       </CardActions>

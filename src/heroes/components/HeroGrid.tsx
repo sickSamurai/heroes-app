@@ -13,9 +13,14 @@ export const HeroGrid = ({ publisher }: Props) => {
 
   return (
     <>
-      <Grid container spacing={2} justifyContent="center" alignItems="center">
+      <Grid
+        container
+        spacing={2}
+        justifyContent="center"
+        alignItems="center"
+        columns={8}>
         {heroList.map((hero, index) => (
-          <Grid xs={3} key={index}>
+          <Grid xs={1} key={index}>
             <HeroCard hero={hero} />
           </Grid>
         ))}
