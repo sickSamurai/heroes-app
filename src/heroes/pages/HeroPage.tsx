@@ -1,15 +1,10 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { getHeroByID } from "../helpers/heroesDAO";
-import Grid from "@mui/material/Unstable_Grid2";
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  Typography,
-} from "@mui/material";
-import { useState } from "react";
+import { Box, Button } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
+import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
+import { HeroDetail } from '../components/HeroDetail';
+import { getHeroByID } from '../helpers/heroesDAO';
 
 type Params = {
   heroID: string;
@@ -29,35 +24,19 @@ export const HeroPage = () => {
   } else {
     const imgURL = `/static/${hero.id}.jpg`;
 
-    const otherCharactersInfo =
-      hero.alter_ego === hero.characters ? null : (
-        <Typography>
-          <b>Other Characters:</b> {hero.characters}
-        </Typography>
-      );
-
     return (
-      <Grid container spacing={2} sx={{ p: 4 }} columns={2}>
+      <Grid
+        container
+        spacing={2}
+        sx={{ p: 4 }}
+        columns={2}
+        className="animate__animated animate__bounceInLeft">
         <Grid>
           <Box component="img" src={imgURL} alt={hero.id} />
         </Grid>
         <Grid xs={1}>
           <Grid>
-            <Card>
-              <CardHeader title={hero.superhero}></CardHeader>
-              <CardContent>
-                <Typography>
-                  <b>Publisher:</b> {hero.publisher}
-                </Typography>
-                <Typography>
-                  <b>Alter Ego:</b> {hero.alter_ego}
-                </Typography>
-                <Typography>
-                  <b>First Appeareance:</b> {hero.first_appearance}
-                </Typography>
-                {otherCharactersInfo!}
-              </CardContent>
-            </Card>
+            <HeroDetail hero={hero} />
           </Grid>
           <Grid>
             <Button

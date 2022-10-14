@@ -18,7 +18,8 @@ export const HeroGrid = ({ publisher }: Props) => {
         spacing={2}
         justifyContent="center"
         alignItems="center"
-        columns={8}>
+        columns={6}
+        className="animate__animated animate__fadeIn">
         {heroList.map((hero, index) => (
           <Grid xs={1} key={index}>
             <HeroCard hero={hero} />
